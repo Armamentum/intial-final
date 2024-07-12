@@ -57,7 +57,6 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-    background: linear-gradient(135deg, #4d0000 0%, #000000 100%);
 }
 
 .contact-card {
