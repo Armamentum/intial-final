@@ -1,14 +1,21 @@
+/* style.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000; /* Set background to black */
+    color: #fff; /* Set text color to white for contrast */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full viewport height */
 }
 
 header, footer {
     background: #4d0000;
     color: #fff;
     padding: 10px 0;
+    width: 100%;
 }
 
 .container {
@@ -49,8 +56,47 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.faqs-section {
+    padding: 50px 0;
+    flex: 1; /* Grow to fill remaining space */
+}
+
+.faqs-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.faq {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+    transition: transform 0.5s; /* Smooth transition for hover effect */
+}
+
+.faq h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #EAA845;
+}
+
+.faq p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.faq:hover {
+    transform: rotate(360deg); /* Spin effect on hover */
+}
+
 footer {
     text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Push footer to bottom */
+    background: #4d0000; /* Ensure consistent background color */
 }
 
 footer p {
@@ -74,7 +120,6 @@ footer ul li a {
     color: #fff;
     text-decoration: none;
     padding: 10px;
-    transition: background 0.3s;
 }
 
 footer ul li a:hover {
@@ -83,18 +128,12 @@ footer ul li a:hover {
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+/* Floating animation keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
     }
-
-    .container {
-        width: 90%;
-    }
-
-    footer ul {
-        flex-direction: column;
-        gap: 10px;
+    50% {
+        transform: translateY(-10px);
     }
 }
