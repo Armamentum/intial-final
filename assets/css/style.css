@@ -1,12 +1,15 @@
+/* style.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000; /* Set background to black */
+    color: #fff; /* Set text color to white for contrast */
 }
 
 header, footer {
-    background: #4d0000;
+    background: #4d00008a;
     color: #fff;
     padding: 10px 0;
 }
@@ -49,8 +52,74 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Adjust gap as needed */
+}
+
+.hero-img {
+    max-width: 50%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px; /* Optional: add border radius for styling */
+    animation: breathe 5s infinite;
+}
+
+.header-text {
+    max-width: 50%; /* Adjust size as needed */
+}
+
+.header-text h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    animation: slide-in 2s ease-out;
+}
+
+.header-text h1 span {
+    color: #EAA845;
+}
+
+.header-text h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+h3.subheader{
+    font-size: 2.5em;
+    margin: 10px 0;
+    animation: slide-out 2s ease-out;
+}
+
+.header-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #ccc; /* Adjust text color for better readability */
+}
+
+.download-btn {
+    background: #EAA845;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #d79539;
+}
+
 footer {
     text-align: center;
+    padding: 20px 0;
 }
 
 footer p {
@@ -83,18 +152,36 @@ footer ul li a:hover {
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+/* Slide-in animation for h1 */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
     }
-
-    .container {
-        width: 90%;
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
+}
 
-    footer ul {
-        flex-direction: column;
-        gap: 10px;
+/* Slide-in animation for h3 */
+@keyframes slide-out {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Breathe animation for hero image */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
     }
 }
