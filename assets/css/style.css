@@ -4,12 +4,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Set text color to white for contrast */
+    background: url(../img/rs-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
 }
 
 header, footer {
-    background: #4d00008a;
+    background: #4d0000a1;
     color: #fff;
     padding: 10px 0;
 }
